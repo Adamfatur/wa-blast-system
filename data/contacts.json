@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Test User 1",
+        "number": "6281234567890",
+        "message": "Hello Test User 1, this is a personalized message!"
+    },
+    {
+        "name": "Myself",
+        "number": "6281234567891",
+        "message": ""
+    }
+]

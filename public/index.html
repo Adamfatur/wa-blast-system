@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Blast Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WA Blast System</h1>
+            <div id="status-indicator" class="status disconnected">Disconnected</div>
+        </header>
+
+        <main>
+            <!-- Left Column: Controls & QR -->
+            <div class="column left">
+                <div class="card" id="connection-card">
+                    <h2>Connection</h2>
+                    <div id="qr-container">
+                        <p>Waiting for QR code...</p>
+                    </div>
+                </div>
+
+                <div class="card" id="blast-card">
+                    <h2>Send Messages</h2>
+                    <div class="form-group">
+                        <label>Numbers (one per line, e.g. 62812...)</label>
+                        <textarea id="numbers-input" placeholder="628123456789&#10;628987654321"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Message Template</label>
+                        <textarea id="message-input" placeholder="Hello there!"></textarea>
+                    </div>
+                    <button id="send-btn">Start Blast</button>
+                </div>
+            </div>
+
+            <!-- Right Column: Logs -->
+            <div class="column right">
+                <div class="card full-height">
+                    <h2>System Logs</h2>
+                    <div id="logs-container"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="client.js"></script>
+</body>
+</html>
